@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grr:</strong>
+  <%= @identidade.grr %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @identidade.cpf %>
+</p>
+
+<p>
+  <strong>Discente:</strong>
+  <%= @identidade.discente_id %>
+</p>
+
+<%= link_to 'Edit', edit_identidade_path(@identidade) %> |
+<%= link_to 'Back', identidades_path %>

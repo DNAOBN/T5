@@ -1,0 +1,22 @@
+<%= form_with(model: docente) do |form| %>
+  <% if docente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(docente.errors.count, "error") %> prohibited this docente from being saved:</h2>
+
+      <ul>
+        <% docente.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

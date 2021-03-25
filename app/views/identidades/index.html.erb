@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Identidades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Grr</th>
+      <th>Cpf</th>
+      <th>Discente</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @identidades.each do |identidade| %>
+      <tr>
+        <td><%= identidade.grr %></td>
+        <td><%= identidade.cpf %></td>
+        <td><%= identidade.discente_id %></td>
+        <td><%= link_to 'Show', identidade %></td>
+        <td><%= link_to 'Edit', edit_identidade_path(identidade) %></td>
+        <td><%= link_to 'Destroy', identidade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Identidade', new_identidade_path %>

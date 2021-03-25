@@ -1,0 +1,30 @@
+<h1>Main#index</h1>
+<p>Find me in app/views/main/index.html.erb</p>
+<button (click)=""></button>
+
+<h4>Discentes</h4>
+<ul>
+  <% @discentes.each do |discente| %>
+  <li>
+    <%= discente.nome %>
+  </li>
+  <% end %>
+</ul>
+
+<h4>Docentes</h4>
+<ul>
+  <% @docentes.each do |docente| %>
+  <li>
+    <%= docente.nome %>
+  </li>
+  <% end %>
+</ul>
+
+<h4>Disciplinas</h4>
+<ul>
+  <% @disciplinas.each do |disciplina| %>
+  <li>
+    <%= disciplina.nome %>
+  </li>
+  <% end %>
+</ul>
