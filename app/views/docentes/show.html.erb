@@ -1,9 +1,17 @@
+<h1>
+  <b>Docente:</b> <%= @docente.nome %>
+</h1>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @docente.nome %>
-</p>
+<strong>Disciplinas:</strong>
+<ul>
+  <% Disciplina.where(docente_id: @docente.id).each do |disciplina| %>
+  <li>
+    <%= disciplina.nome %>
+  </li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_docente_path(@docente) %> |
 <%= link_to 'Back', docentes_path %>

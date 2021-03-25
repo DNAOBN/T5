@@ -12,7 +12,7 @@
 
 <p>
   <strong>Docente:</strong>
-  <%= @disciplina.docente_id %>
+  <%= Docente.find(@disciplina.docente_id).nome %>
 </p>
 
 <%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |

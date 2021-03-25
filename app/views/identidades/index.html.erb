@@ -20,7 +20,7 @@
         <td><%= identidade.discente_id %></td>
         <td><%= link_to 'Show', identidade %></td>
         <td><%= link_to 'Edit', edit_identidade_path(identidade) %></td>
-        <td><%= link_to 'Destroy', identidade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Excluir', identidade, method: :delete, data: { confirm: 'Tem certeza que quer deletar este registro?' } %></td>
       </tr>
     <% end %>
   </tbody>

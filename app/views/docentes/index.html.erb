@@ -16,7 +16,7 @@
         <td><%= docente.nome %></td>
         <td><%= link_to 'Show', docente %></td>
         <td><%= link_to 'Edit', edit_docente_path(docente) %></td>
-        <td><%= link_to 'Destroy', docente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Excluir', docente, method: :delete, data: { confirm: 'Tem certeza que quer deletar este registro?' } %></td>
       </tr>
     <% end %>
   </tbody>

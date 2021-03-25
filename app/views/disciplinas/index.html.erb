@@ -17,10 +17,10 @@
       <tr>
         <td><%= disciplina.nome %></td>
         <td><%= disciplina.carga_horaria %></td>
-        <td><%= disciplina.docente_id %></td>
+        <td><%= Docente.find(disciplina.docente_id).nome %></td>
         <td><%= link_to 'Show', disciplina %></td>
         <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
-        <td><%= link_to 'Destroy', disciplina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Excluir', disciplina, method: :delete, data: { confirm: 'Tem certeza que quer deletar este registro?' } %></td>
       </tr>
     <% end %>
   </tbody>
