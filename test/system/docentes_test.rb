@@ -35,7 +35,7 @@ class DocentesTest < ApplicationSystemTestCase
   test "destroying a Docente" do
     visit docentes_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "Excluir", match: :first
     end
 
     assert_text "Docente was successfully destroyed"

@@ -39,7 +39,7 @@ class IdentidadesTest < ApplicationSystemTestCase
   test "destroying a Identidade" do
     visit identidades_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "Excluir", match: :first
     end
 
     assert_text "Identidade was successfully destroyed"

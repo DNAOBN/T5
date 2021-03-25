@@ -39,7 +39,7 @@ class DisciplinasTest < ApplicationSystemTestCase
   test "destroying a Disciplina" do
     visit disciplinas_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on "Excluir", match: :first
     end
 
     assert_text "Disciplina was successfully destroyed"
