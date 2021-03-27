@@ -1,37 +1,61 @@
-<p id="notice"><%= notice %></p>
+<main class="container">
 
-<h1>Disciplinas</h1>
+  <section class="card">
+    <div class="card-header">
+      <span class="flex-start">
+        Disciplinas
+        <%= link_to '+', new_disciplina_path, class: 'add-button' %>
+      </span>
+      <%= notice %>
+    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Carga Horária</th>
+          <th>Docente</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Carga horaria</th>
-      <th>Docente</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @disciplinas.each do |disciplina| %>
+          <tr>
+            <td><%= disciplina.nome %></td>
+            <td><%= disciplina.carga_horaria %></td>
+            <td>
+              <% if disciplina.docente_id %>
+                <%= Docente.find(disciplina.docente_id).nome %>
+              <% else %>
+                Nenhum
+              <% end %>
+            </td>
+            <td class="buttons-container">
+              <%=
+                link_to 'Visualizar',
+                disciplina,
+                class: "view-button"
+              %>
+              <%=
+                link_to 'Editar',
+                edit_disciplina_path(disciplina),
+                class: 'edit-button'
+              %>
+              <%= 
+                link_to 'Excluir',
+                disciplina,
+                method: :delete,
+                data: { confirm: 'Tem certeza que quer deletar este registro?' },
+                class: 'delete-button'
+              %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @disciplinas.each do |disciplina| %>
-      <tr>
-        <td><%= disciplina.nome %></td>
-        <td><%= disciplina.carga_horaria %></td>
-        <td>
-          <% if disciplina.docente_id %>
-            <%= Docente.find(disciplina.docente_id).nome %>
-          <% else %>
-            Nenhum
-          <% end %>
-        </td>
-        <td><%= link_to 'Show', disciplina %></td>
-        <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
-        <td><%= link_to 'Excluir', disciplina, method: :delete, data: { confirm: 'Tem certeza que quer deletar este registro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </section>
 
-<br>
+</main>
 
-<%= link_to 'New Disciplina', new_disciplina_path %>

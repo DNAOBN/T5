@@ -1,27 +1,51 @@
-<p id="notice"><%= notice %></p>
+<main class="container">
 
-<h1>Docentes</h1>
+  <section class="card">
+    <div class="card-header">
+      <span class="flex-start">
+        Docentes
+        <%= link_to '+', new_docente_path, class: 'add-button' %>
+      </span>
+      <%= notice %>
+    </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <tbody>
+        <% @docentes.each do |docente| %>
+          <tr>
+            <td><%= docente.nome %></td>
+            <td class="buttons-container">
+              <%=
+                link_to 'Visualizar',
+                docente,
+                class: "view-button"
+              %>
+              <%=
+                link_to 'Editar',
+                edit_docente_path(docente),
+                class: 'edit-button'
+              %>
+              <%= 
+                link_to 'Excluir',
+                docente,
+                method: :delete,
+                data: { confirm: 'Tem certeza que quer deletar este registro?' },
+                class: 'delete-button'
+              %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <tbody>
-    <% @docentes.each do |docente| %>
-      <tr>
-        <td><%= docente.nome %></td>
-        <td><%= link_to 'Show', docente %></td>
-        <td><%= link_to 'Edit', edit_docente_path(docente) %></td>
-        <td><%= link_to 'Excluir', docente, method: :delete, data: { confirm: 'Tem certeza que quer deletar este registro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </section>
 
-<br>
+</main>
 
-<%= link_to 'New Docente', new_docente_path %>
