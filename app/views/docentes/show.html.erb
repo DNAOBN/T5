@@ -1,17 +1,46 @@
-<h1>
-  <b>Docente:</b> <%= @docente.nome %>
-</h1>
+<main class="show-container">
 
-<p id="notice"><%= notice %></p>
+  <div class="flex-start">
+    <%=
+      link_to '< Voltar para docentes',
+      docentes_path,
+      class: 'back-button'
+    %>
+    <%=
+      link_to 'Edit',
+      edit_docente_path(@docente),
+      class: 'edit-button'
+    %>
+  </div>
 
-<strong>Disciplinas:</strong>
-<ul>
-  <% @docente.disciplina_ids.each do |disciplina| %>
-  <li>
-    <%= disciplina %>
-  </li>
-  <% end %>
-</ul>
+  <section class="card">
 
-<%= link_to 'Edit', edit_docente_path(@docente) %> |
-<%= link_to 'Back', docentes_path %>
+    <div class="card-header">
+      <span>
+        Docente <%= @docente.nome %>
+      </span>
+      <p id="notice"><%= notice %></p>
+    </div>
+
+    <div class="card-body">
+
+      <label>
+        <strong>Disciplinas:</strong>
+        <% if @docente.disciplinas.any? %>
+          <ul>
+            <% @docente.disciplinas.each do |disciplina| %>
+              <li>
+                <%= disciplina.nome %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          Nenhuma
+        <% end %>
+      </label>
+
+    </div>
+
+  </section>
+
+</main>

@@ -35,13 +35,17 @@
 
       <label>
         <strong>Disciplinas:</strong>
-        <ul>
-          <% @discente.disciplinas.each do |disciplina| %>
-            <li>
-              <%= disciplina.nome %>
-            </li>
-          <% end %>
-        </ul>
+        <% if @discente.disciplinas.any? %>
+          <ul>
+            <% @discente.disciplinas.each do |disciplina| %>
+              <li>
+                <%= disciplina.nome %>
+              </li>
+            <% end %>
+          </ul>
+        <% else %>
+          Nenhuma
+        <% end %>
       </label>
 
     </div>

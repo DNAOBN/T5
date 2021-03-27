@@ -1,19 +1,58 @@
-<p id="notice"><%= notice %></p>
+<main class="show-container">
 
-<p>
-  <strong>Grr:</strong>
-  <%= @identidade.grr %>
-</p>
+  <div class="flex-start">
+    <%=
+      link_to '< Voltar para identidades',
+      identidades_path,
+      class: 'back-button'
+    %>
+    <%=
+      link_to 'Edit',
+      edit_identidade_path(@identidade),
+      class: 'edit-button'
+    %>
+  </div>
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @identidade.cpf %>
-</p>
+  <section class="card">
 
-<p>
-  <strong>Discente:</strong>
-  <%= @identidade.discente_id %>
-</p>
+    <div class="card-header">
+      <span>
+        Identidade
+      </span>
+      <p id="notice"><%= notice %></p>
+    </div>
 
-<%= link_to 'Edit', edit_identidade_path(@identidade) %> |
-<%= link_to 'Back', identidades_path %>
+    <div class="card-body">
+
+      <label>
+        <strong>GRR:</strong>
+        <% if @identidade.grr %>
+          <%= @identidade.grr %>
+        <% else %>
+          Nenhum
+        <% end %>
+      </label>
+
+      <label>
+        <strong>CPF:</strong>
+        <% if @identidade.cpf %>
+          <%= @identidade.formatted_cpf %>
+        <% else %>
+          Nenhum
+        <% end %>
+      </label>
+
+      <label>
+        <strong>Discente associado:</strong>
+        <% if not @identidade.discente.blank? %>
+          <%= @identidade.discente.nome %>
+        <% else %>
+          Nenhum
+        <% end %>
+      </label>
+
+    </div>
+
+  </section>
+
+</main>
