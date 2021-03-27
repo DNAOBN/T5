@@ -1,20 +1,51 @@
-<p id="notice"><%= notice %></p>
+<main class="show-container">
 
-<p>
-  <strong>Nome:</strong>
-  <%= @discente.nome %>
+  <div class="flex-start">
+    <%=
+      link_to '< Voltar para discentes',
+      discentes_path,
+      class: 'back-button'
+    %>
+    <%=
+      link_to 'Edit',
+      edit_discente_path(@discente),
+      class: 'edit-button'
+    %>
+  </div>
 
-  <strong>Identidade:</strong>
-  <% if not @discente.identidade.blank? %>
-    <%= @discente.identidade.string_id %>
-  <% else %>
-    Não possui
-  <% end %>
+  <section class="card">
 
-  <% @discente.disciplinas.each do |disciplina| %>
-    <%= disciplina.nome %>
-  <% end %>
-</p>
+    <div class="card-header">
+      <span>
+        <%= @discente.nome %>
+      </span>
+      <p id="notice"><%= notice %></p>
+    </div>
 
-<%= link_to 'Edit', edit_discente_path(@discente) %> |
-<%= link_to 'Back', discentes_path %>
+    <div class="card-body">
+
+      <label>
+        <strong>Identidade:</strong>
+        <% if not @discente.identidade.blank? %>
+          <%= @discente.identidade.string_id %>
+        <% else %>
+          Não possui
+        <% end %>
+      </label>
+
+      <label>
+        <strong>Disciplinas:</strong>
+        <ul>
+          <% @discente.disciplinas.each do |disciplina| %>
+            <li>
+              <%= disciplina.nome %>
+            </li>
+          <% end %>
+        </ul>
+      </label>
+
+    </div>
+
+  </section>
+
+</main>
