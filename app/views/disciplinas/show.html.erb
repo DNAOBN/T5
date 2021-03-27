@@ -12,7 +12,26 @@
 
 <p>
   <strong>Docente:</strong>
-  <%= Docente.find(@disciplina.docente_id).nome %>
+  <% if @disciplina.docente_id %>
+    <%= Docente.find(@disciplina.docente_id).nome %>
+  <% else %>
+    Nenhum
+  <% end %>
+</p>
+
+<p>
+  <strong>Discentes:</strong>
+  <% if @disciplina.discentes.any? %>
+    <ul>
+      <% @disciplina.discentes.each do |discente| %>
+        <li>
+          <%= discente.nome %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    Nenhum
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_disciplina_path(@disciplina) %> |

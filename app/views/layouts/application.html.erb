@@ -11,6 +11,16 @@
   </head>
 
   <body>
+  
+    <header>
+      <%= link_to 'Home', root_path %>
+      <%= link_to 'Disciplinas', disciplinas_path %>
+      <%= link_to 'Docentes', docentes_path %>
+      <%= link_to 'Discentes', discentes_path %>
+      <%= link_to 'Identidades', identidades_path %>
+    </header>
+    
     <%= yield %>
+
   </body>
 </html>

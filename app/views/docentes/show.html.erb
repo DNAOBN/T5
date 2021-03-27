@@ -6,9 +6,9 @@
 
 <strong>Disciplinas:</strong>
 <ul>
-  <% Disciplina.where(docente_id: @docente.id).each do |disciplina| %>
+  <% @docente.disciplina_ids.each do |disciplina| %>
   <li>
-    <%= disciplina.nome %>
+    <%= disciplina %>
   </li>
   <% end %>
 </ul>

@@ -3,6 +3,17 @@
 <p>
   <strong>Nome:</strong>
   <%= @discente.nome %>
+
+  <strong>Identidade:</strong>
+  <% if not @discente.identidade.blank? %>
+    <%= @discente.identidade.string_id %>
+  <% else %>
+    Não possui
+  <% end %>
+
+  <% @discente.disciplinas.each do |disciplina| %>
+    <%= disciplina.nome %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_discente_path(@discente) %> |

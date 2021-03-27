@@ -1,30 +1,42 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
-<button (click)=""></button>
+<main class="container">
 
-<h4>Discentes</h4>
-<ul>
-  <% @discentes.each do |discente| %>
-  <li>
-    <%= discente.nome %>
-  </li>
-  <% end %>
-</ul>
+  <section class="card">
+    <div class="card-header">
+      Discentes
+    </div>
+    <ul>
+      <% Discente.all.each do |discente| %>
+        <li>
+          <%= link_to discente.nome, discente %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
 
-<h4>Docentes</h4>
-<ul>
-  <% @docentes.each do |docente| %>
-  <li>
-    <%= docente.nome %>
-  </li>
-  <% end %>
-</ul>
+  <section class="card">
+    <div class="card-header">
+      Disciplinas
+    </div>
+    <ul>
+      <% Disciplina.all.each do |disciplina| %>
+        <li>
+          <%= link_to disciplina.nome, disciplina %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
 
-<h4>Disciplinas</h4>
-<ul>
-  <% @disciplinas.each do |disciplina| %>
-  <li>
-    <%= disciplina.nome %>
-  </li>
-  <% end %>
-</ul>
+  <section class="card">
+    <div class="card-header">
+      Docentes
+    </div>
+    <ul>
+      <% Docente.all.each do |docente| %>
+        <li>
+          <%= link_to docente.nome, docente %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+</main>

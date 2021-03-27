@@ -17,7 +17,13 @@
       <tr>
         <td><%= disciplina.nome %></td>
         <td><%= disciplina.carga_horaria %></td>
-        <td><%= Docente.find(disciplina.docente_id).nome %></td>
+        <td>
+          <% if disciplina.docente_id %>
+            <%= Docente.find(disciplina.docente_id).nome %>
+          <% else %>
+            Nenhum
+          <% end %>
+        </td>
         <td><%= link_to 'Show', disciplina %></td>
         <td><%= link_to 'Edit', edit_disciplina_path(disciplina) %></td>
         <td><%= link_to 'Excluir', disciplina, method: :delete, data: { confirm: 'Tem certeza que quer deletar este registro?' } %></td>

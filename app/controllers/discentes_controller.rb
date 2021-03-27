@@ -64,6 +64,6 @@ class DiscentesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def discente_params
-      params.require(:discente).permit(:nome)
+      params.require(:discente).permit(:nome, disciplina_ids: [])
     end
 end

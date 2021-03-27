@@ -64,6 +64,6 @@ class DisciplinasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def disciplina_params
-      params.require(:disciplina).permit(:nome, :carga_horaria, :docente_id)
+      params.require(:disciplina).permit(:nome, :carga_horaria, :docente_id, discente_ids: [])
     end
 end

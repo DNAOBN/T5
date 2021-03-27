@@ -16,6 +16,25 @@
     <%= form.text_field :nome %>
   </div>
 
+  <div class="field">
+    <%= form.label :identidade %>
+    <%=
+      form.collection_select :identidade_id,
+      Identidade.where(discente_id: nil),
+      :id, :string_id
+    %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%=
+      form.collection_check_boxes :disciplina_ids,
+      Disciplina.order(:nome),
+      :id, :nome
+    %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

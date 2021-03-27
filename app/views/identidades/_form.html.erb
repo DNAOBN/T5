@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :discente_id %>
-    <%= form.text_field :discente_id %>
+    <%= form.collection_select :discente_id, Discente.order(:nome), :id, :nome %>
   </div>
 
   <div class="actions">
