@@ -12,7 +12,7 @@ class DocentesTest < ApplicationSystemTestCase
 
   test "creating a Docente" do
     visit docentes_url
-    click_on "New Docente"
+    click_on "Novo Docente"
 
     fill_in "Nome", with: @docente.nome
     click_on "Create Docente"

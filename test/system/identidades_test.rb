@@ -12,7 +12,7 @@ class IdentidadesTest < ApplicationSystemTestCase
 
   test "creating a Identidade" do
     visit identidades_url
-    click_on "New Identidade"
+    click_on "Nova Identidade"
 
     fill_in "Cpf", with: @identidade.cpf
     fill_in "Discente", with: @identidade.discente_id

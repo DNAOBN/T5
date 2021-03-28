@@ -26,16 +26,18 @@
   </div>
 
   <div class="field">
-    <%= form.label :nome %>
-    <%=
-      form.collection_check_boxes :disciplina_ids,
-      Disciplina.order(:nome),
-      :id, :nome
-    %>
+    Discente
+    <div class="checkboxes">
+      <%=
+        form.collection_check_boxes :disciplina_ids,
+        Disciplina.order(:nome),
+        :id, :nome
+      %>
+    </div>
   </div>
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Criar Discente', class: 'view-button' %>
   </div>
 <% end %>

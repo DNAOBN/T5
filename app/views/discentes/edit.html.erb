@@ -1,6 +1,8 @@
-<h1>Editing Discente</h1>
+<h1>Editando Discente</h1>
 
 <%= render 'form', discente: @discente %>
 
-<%= link_to 'Show', @discente %> |
-<%= link_to 'Back', discentes_path %>
+<div class="flex-start">
+  <%= link_to '< Voltar para discentes', discentes_path, class: 'back-button' %>
+  <%= link_to 'Visualizar discente', @discente, class: 'edit-button' %>
+</div>

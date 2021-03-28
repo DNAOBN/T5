@@ -2,6 +2,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 @import "./variables.scss";
 
+a {
+  color: $color_white;
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: 25px auto;
+  text-align: left;
+  align-items: center;
+}
+
+input,
+select {
+  height: 25px;
+  padding: 0px 10px;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid $color_white;
+  border-radius: 4px;
+  color: $color_white;
+}
+
+
+.field {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0px 0px 20px;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -138,6 +170,7 @@ table {
   font-weight: bold;
   border: 2px solid $color;
   color: $color;
+  cursor: pointer;
   transition: 0.2s;
 
   &:hover {

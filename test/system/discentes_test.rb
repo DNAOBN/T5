@@ -12,7 +12,7 @@ class DiscentesTest < ApplicationSystemTestCase
 
   test "creating a Discente" do
     visit discentes_url
-    click_on "New Discente"
+    click_on "Novo Discente"
 
     fill_in "Nome", with: @discente.nome
     click_on "Create Discente"

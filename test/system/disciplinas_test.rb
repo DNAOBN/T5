@@ -12,7 +12,7 @@ class DisciplinasTest < ApplicationSystemTestCase
 
   test "creating a Disciplina" do
     visit disciplinas_url
-    click_on "New Disciplina"
+    click_on "Nova Disciplina"
 
     fill_in "Carga horaria", with: @disciplina.carga_horaria
     fill_in "Docente", with: @disciplina.docente_id

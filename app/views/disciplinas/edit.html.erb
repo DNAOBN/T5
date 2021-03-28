@@ -1,6 +1,8 @@
-<h1>Editing Disciplina</h1>
+<h1>Editando Disciplina</h1>
 
 <%= render 'form', disciplina: @disciplina %>
 
-<%= link_to 'Show', @disciplina %> |
-<%= link_to 'Back', disciplinas_path %>
+<div class="flex-start">
+  <%= link_to '< Voltar para disciplinas', docentes_path, class: 'back-button' %>
+  <%= link_to 'Visualizar disciplina', @disciplina, class: 'edit-button' %>
+</div>

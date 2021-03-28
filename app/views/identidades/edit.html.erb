@@ -1,6 +1,8 @@
-<h1>Editing Identidade</h1>
+<h1>Editando Identidade</h1>
 
 <%= render 'form', identidade: @identidade %>
 
-<%= link_to 'Show', @identidade %> |
-<%= link_to 'Back', identidades_path %>
+<div class="flex-start">
+  <%= link_to '< Voltar para identidades', identidades_path, class: 'back-button' %>
+  <%= link_to 'Visualizar identidade', @identidade, class: 'edit-button' %>
+</div>
