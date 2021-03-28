@@ -7,7 +7,7 @@ $ rails db:migrate
 $ rails s
 ```
 
-e acessar localhost:3563
+e acessar ```localhost:3563```
 
 Relacionamentos
 - One to One: Identidade e Discente
