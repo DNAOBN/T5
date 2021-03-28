@@ -14,7 +14,7 @@ Relacionamentos
 - One to Many: Docente e Disciplinas
 - Many to Many: Disciplinas e Discentes
 
-## Para rodar na litorina
+## Para executar na litorina
 
 Executar no seu computador
 ```
@@ -25,3 +25,5 @@ Executar no diretório T5 do usuário dobn17 da litorina
 ```
 rails s -b 0.0.0.0 -p 3198
 ```
+
+E acessar ```localhost:3000``` no seu computador
