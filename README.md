@@ -1,24 +1,15 @@
-# README
+# Trabalho de rails de programação web
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para executar, basta rodar
+```
+$ bundle install
+$ rails db:migrate
+$ rails s
+```
 
-Things you may want to cover:
+e acessar localhost:3563
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Relacionamentos
+- One to One: Identidade e Discente
+- One to Many: Docente e Disciplinas
+- Many to Many: Disciplinas e Discentes
